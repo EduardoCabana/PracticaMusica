@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Canciones</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <h1>🎵 Lista de Canciones</h1>
+    <div id="tracks-container"></div>
+
+    <script>
+        fetch("tracks.json")
+            .then((response) => response.json())
+            .then((data) => {
+                const container = document.getElementById("tracks-container");
+                container.innerHTML = `
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Título</th>
+                  <th>Duración</th>
+                  <th>Artista</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${data
+                        .map(
+                            (track) => `
+                  <tr>
+                    <td>${track.id}</td>
+                    <td>${track.title}</td>
+                    <td>${track.duration}</td>
+                    <td>${track.artist}</td>
+                  </tr>
+                `
+                        )
+                        .join("")}
+              </tbody>
+            </table>
+          `;
+            })
+            .catch((error) => console.error("Error al cargar tracks:", error));
+    </script>
+</body>
+
+</html>

@@ -7,12 +7,12 @@ import { AppService } from './app.service';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(process.cwd(), 'data'), // carpeta donde está tracks.json
-      serveRoot: '/data',                     // ruta para abrir archivo directo
+      rootPath: join(__dirname, '..', 'public'),
     }),
   ],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule { }
+
 

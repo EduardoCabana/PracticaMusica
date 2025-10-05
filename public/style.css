@@ -1,0 +1,62 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #f0f4f8, #ffffff);
+  padding: 40px;
+  text-align: center;
+}
+
+h1 {
+  color: #2c3e50;
+  font-size: 2.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+table {
+  margin: 30px auto;
+  width: 80%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+th {
+  background: #4a90e2;
+  color: white;
+  padding: 14px;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 12px;
+  font-size: 15px;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+td:nth-child(1) {
+  color: #2196f3;
+}
+
+td:nth-child(2) {
+  color: #f57c00;
+}
+
+td:nth-child(3) {
+  color: #388e3c;
+}
+
+td:nth-child(4) {
+  color: #8e24aa;
+}
+
+tr:hover {
+  background-color: #e3f2fd;
+  transition: background-color 0.3s ease;
+}

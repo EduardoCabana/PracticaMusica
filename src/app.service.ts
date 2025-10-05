@@ -14,7 +14,7 @@ export class AppService {
   private tracks: iTracks[];
 
   constructor() {
-    const filePath = path.join(process.cwd(), 'data', 'tracks.json');
+    const filePath = path.join(process.cwd(), 'public', 'tracks.json');
     const data = fs.readFileSync(filePath, 'utf-8');
     this.tracks = JSON.parse(data);
   }
